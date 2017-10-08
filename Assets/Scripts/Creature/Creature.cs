@@ -19,6 +19,13 @@ public class Creature : MonoBehaviour {
 	//compound value calculated based on base stats
 	private int _happiness;
 
+	public float MovementSpeed = 0.1f;
+
+
+
+
+
+
 	/// <summary>
 	/// Goes through the different needs and increases/decreases them as appropriate
 	/// </summary>
@@ -65,12 +72,30 @@ public class Creature : MonoBehaviour {
 	}
 
 	/// <summary>
-	/// Adds the specified amount of food into teh creature
+	/// Adds the specified amount of food into the creature
 	/// </summary>
 	/// <param name="FoodEffect">Food effect.</param>
 	public void Feed(int FoodEffect){
 		_food += FoodEffect;
 		Debug.Log ("Burp");
+	}
+
+	public void MoveToActionPoint(string myTargetType){
+		ActionPoint targetPoint = RoomManager.Instance.GetActionPoint (myTargetType);
+		StartCoroutine(MoveIEnumerator (targetPoint.gameObject.transform.position));
+	}
+
+	IEnumerator MoveIEnumerator(Vector3 targetPos){
+		bool TargetReached = false;
+		while (!TargetReached) {
+			Vector3 sourcePos = gameObject.transform.position;
+			transform.position = Vector3.MoveTowards (sourcePos, targetPos, Mathf.SmoothStep (0, 1f, MovementSpeed));
+			if (Mathf.Approximately (transform.position.x, targetPos.x) && Mathf.Approximately (transform.position.y, targetPos.y) && Mathf.Approximately (transform.position.z, targetPos.z)) {     
+				TargetReached = true;
+			}
+			yield return 0;
+		}
+		Debug.Log ("Target Reached");
 	}
 }
 		
