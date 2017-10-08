@@ -120,7 +120,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1143800600540518}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 00a5b2ad9c6e8f84c89a0432d2326eae, type: 2}
   m_CullingMode: 0
@@ -145,6 +145,8 @@ MonoBehaviour:
   HungerSpeed: 3
   _energy: 100
   EnergySpeed: 2
+  MovementSpeed: 0.1
+  PoopPrefab: {fileID: 1922511668626204, guid: ba3dd821a0109ce40b22ea53972afd31, type: 2}
 --- !u!114 &114185970094809802
 MonoBehaviour:
   m_ObjectHideFlags: 1

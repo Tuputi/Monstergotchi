@@ -16,15 +16,11 @@ public class Creature : MonoBehaviour {
 	[SerializeField]
 	private int EnergySpeed = 3;
 
-	//compound value calculated based on base stats
-	private int _happiness;
-
 	public float MovementSpeed = 0.1f;
 
+	private Animator animator;
 
-
-
-
+	public GameObject PoopPrefab;
 
 	/// <summary>
 	/// Goes through the different needs and increases/decreases them as appropriate
@@ -38,6 +34,8 @@ public class Creature : MonoBehaviour {
 	private void HandleHunger(){
 		if (_food > 100) {
 			Debug.Log ("Poop");
+			GameObject poop = Instantiate (PoopPrefab);
+			poop.transform.position = this.transform.position;
 			_food = 100;
 		}
 		_food -= HungerSpeed;
@@ -80,13 +78,32 @@ public class Creature : MonoBehaviour {
 		Debug.Log ("Burp");
 	}
 
+
+
+
+
+	//MOVEMENT/LOCATION LOGIC
+
 	public void MoveToActionPoint(string myTargetType){
 		ActionPoint targetPoint = RoomManager.Instance.GetActionPoint (myTargetType);
-		StartCoroutine(MoveIEnumerator (targetPoint.gameObject.transform.position));
+
+		if (animator == null) {
+			animator = GetComponentInChildren<Animator> ();
+		}
+		animator.SetBool ("Bounce", true);
+
+		if (MovementIEnumerator != null) {
+			StopCoroutine (MovementIEnumerator);
+		}
+		MovementIEnumerator = MoveIEnumerator (targetPoint);
+		StartCoroutine(MovementIEnumerator);
 	}
 
-	IEnumerator MoveIEnumerator(Vector3 targetPos){
+	IEnumerator MovementIEnumerator;
+
+	IEnumerator MoveIEnumerator(ActionPoint actionPoint){
 		bool TargetReached = false;
+		Vector3 targetPos = actionPoint.gameObject.transform.position;
 		while (!TargetReached) {
 			Vector3 sourcePos = gameObject.transform.position;
 			transform.position = Vector3.MoveTowards (sourcePos, targetPos, Mathf.SmoothStep (0, 1f, MovementSpeed));
@@ -95,7 +112,26 @@ public class Creature : MonoBehaviour {
 			}
 			yield return 0;
 		}
+		animator.SetBool ("Bounce", false);
+		DoLocationAction (actionPoint);
 		Debug.Log ("Target Reached");
+	}
+
+	private void DoLocationAction(ActionPoint actionPoint){
+		switch (actionPoint.Type) {
+		case ActionPoint.ActionPointType.Food:
+			Feed (35);
+			Debug.Log ("Omnomonm...Burp");
+			break;
+		case ActionPoint.ActionPointType.Sleep:
+			if (_energyState == EnergyState.Sleepy) {
+				_energyState = EnergyState.Asleep;
+				Debug.Log ("ZzzZZzz....");
+			}
+			break;
+		default:
+			break;
+		}
 	}
 }
 		

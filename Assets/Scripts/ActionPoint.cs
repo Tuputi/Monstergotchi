@@ -5,7 +5,8 @@ using UnityEngine;
 public class ActionPoint : MonoBehaviour {
 
 	public enum ActionPointType{
-		MovementTarget
+		Food,
+		Sleep
 	}
 
 	public string Name;
