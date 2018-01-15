@@ -5,26 +5,25 @@ using UnityEngine;
 public class Draggable : MonoBehaviour {
 	private Vector3 screenPoint; 
 	private Vector3 offset;
-	private float OrigY;
-
 	public bool BeingDragged = false;
+
+	private float OrigY;
 
 	void OnMouseDown()
 	{
 		screenPoint = Camera.main.WorldToScreenPoint(transform.position);
-		offset =  transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y,screenPoint.z));
-		BeingDragged = true;
 		OrigY = Input.mousePosition.y;
+		//offset =  transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y,screenPoint.z));
+		BeingDragged = true;
 	}
 
 	void OnMouseDrag()
 	{
+		float cahngeY = (OrigY - Input.mousePosition.y)/20f;
 		Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-		Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
-		float changedY = (OrigY - Input.mousePosition.y)/10f;
-		Debug.Log ("Change is: " + changedY);
-		Vector3 curPosChangeY = new Vector3 (curPosition.x, curPosition.y, curPosition.z + changedY);
-		transform.position = curPosChangeY;
+		Vector3 curPosition = Camera.main.ScreenToWorldPoint (curScreenPoint);// + offset;
+		Vector3 locedYPosition = new Vector3 (curPosition.x, 0.1f, curPosition.z-cahngeY);
+		transform.position = locedYPosition;
 	}
 
 	void OnMouseUp(){

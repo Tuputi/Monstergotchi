@@ -6,9 +6,14 @@ public class ActionPoint : MonoBehaviour {
 
 	public enum ActionPointType{
 		Food,
-		Sleep
+		Sleep,
+		Play
 	}
 
 	public string Name;
 	public ActionPointType Type;
+
+	public void ActivateActionPoint(){
+		GameManager.instance.MyCreature.MoveToActionPoint (Name);
+	}
 }

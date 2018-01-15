@@ -9,4 +9,10 @@ namespace CreatureStates  {
 		Asleep,
 		Hyper
 	}
+
+	public enum MotivationState{
+		Normal,
+		Bored,
+		Overexcited
+	}
 }
