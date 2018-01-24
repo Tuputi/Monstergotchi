@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour {
 
 
 	void Update(){
-
 		UpdateCreatureNeeds ();
 	}
 
@@ -42,4 +41,20 @@ public class GameManager : MonoBehaviour {
 			myCreature.UpdateNeeds ();
 		}
 	}
+
+	private void UpdateCreatureNeedsForATimespan(float timespan){
+		float currentTime = 0;
+		while (currentTime < timespan) {
+			currentTime += NeedUpdateTick;
+			myCreature.UpdateNeeds ();
+		}
+	}
+
+	#region saving
+	public void Save(){
+	}
+
+	public void Load(){
+	}
+	#endregion
 }
