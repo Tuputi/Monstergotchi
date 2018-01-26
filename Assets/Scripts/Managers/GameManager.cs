@@ -7,10 +7,6 @@ using System;
 
 public class GameManager : MonoBehaviour {
 
-	public float NeedUpdateTick = 10f;
-	private float _currentNeedsTick = 0f;
-
-
 	public Creature CreaturePrefab;
 	private Creature myCreature;
 
@@ -32,23 +28,15 @@ public class GameManager : MonoBehaviour {
 		myCreature = Instantiate (CreaturePrefab);
 		myCreature.gameObject.transform.position = new Vector3 (0f, 0f, 0f);
 		UpdateSliders ();
-	}
-
-
-	void Update(){
-		UpdateCreatureNeeds ();
+		InvokeRepeating ("UpdateCreatureNeeds", 1f, 1f); //update needs once per second
 	}
 
 	/// <summary>
 	/// Orders Creature to check it's needs at regular interval
 	/// </summary>
 	void UpdateCreatureNeeds(){
-		_currentNeedsTick += Time.deltaTime;
-		if (_currentNeedsTick > NeedUpdateTick) {
-			_currentNeedsTick = 0;
-			myCreature.UpdateNeeds ();
-			UpdateSliders ();
-		}
+		myCreature.UpdateNeeds ();
+		UpdateSliders ();
 	}
 
 	public void UpdateSliders(){
@@ -57,12 +45,13 @@ public class GameManager : MonoBehaviour {
 		MotivationSlider.value = myCreature._motivation;
 	}
 
-	private void UpdateCreatureNeedsForATimespan(float timespan){
-		float currentTime = 0;
-		while (currentTime < timespan) {
-			currentTime += NeedUpdateTick;
+	private void UpdateCreatureNeedsForATimespan(int seconds){
+		int currentTime = 0;
+		while (currentTime < seconds/2) {
+			currentTime++;
 			myCreature.UpdateNeeds ();
 		}
+		Debug.Log ("Updated: "+currentTime);
 	}
 
 	#region saving
@@ -85,6 +74,7 @@ public class GameManager : MonoBehaviour {
 			DateTime lastSaveTime = DateTime.FromFileTimeUtc (save.LastTimeStampUTC);
 			TimeSpan passedTime = DateTime.Now - lastSaveTime;
 			Debug.Log (passedTime);
+			UpdateCreatureNeedsForATimespan (passedTime.Seconds);
 		}
 	}
 	#endregion
