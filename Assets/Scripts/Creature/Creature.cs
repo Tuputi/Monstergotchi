@@ -136,7 +136,6 @@ public class Creature : MonoBehaviour {
 		_food = save.food;
 		_energy = save.energy;
 		_motivation = save.motivation;
-		GameManager.instance.UpdateSliders ();
 	}
 
 

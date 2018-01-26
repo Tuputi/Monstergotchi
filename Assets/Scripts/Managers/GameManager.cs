@@ -25,8 +25,10 @@ public class GameManager : MonoBehaviour {
 	void Start()
 	{
 		instance = this;
-		myCreature = Instantiate (CreaturePrefab);
-		myCreature.gameObject.transform.position = new Vector3 (0f, 0f, 0f);
+		if (myCreature == null) {
+			myCreature = Instantiate (CreaturePrefab);
+			myCreature.gameObject.transform.position = new Vector3 (0f, 0f, 0f);
+		}
 		UpdateSliders ();
 		InvokeRepeating ("UpdateCreatureNeeds", 1f, 1f); //update needs once per second
 	}
@@ -70,12 +72,37 @@ public class GameManager : MonoBehaviour {
 			string content = File.ReadAllText (Application.persistentDataPath + "/save.txt");
 
 			CreatureSave save = JsonUtility.FromJson <CreatureSave>(content);
+			if (myCreature == null) {
+				myCreature = Instantiate (CreaturePrefab);
+				myCreature.gameObject.transform.position = new Vector3 (0f, 0f, 0f);
+			}
 			myCreature.InitFromSave (save);
 			DateTime lastSaveTime = DateTime.FromFileTimeUtc (save.LastTimeStampUTC);
 			TimeSpan passedTime = DateTime.Now - lastSaveTime;
 			Debug.Log (passedTime);
 			UpdateCreatureNeedsForATimespan (passedTime.Seconds);
+			UpdateSliders ();
 		}
+	}
+
+
+	void OnApplicationPause(bool pauseStatus)
+	{
+		if (pauseStatus)
+		{
+			Debug.Log("Paused");
+			Save ();
+		}
+		else
+		{
+			Debug.Log("resumed");
+			Load ();
+		}
+	}
+
+	void OnApplicationQuit(){
+		Debug.Log("Quitting");
+		Save ();
 	}
 	#endregion
 }

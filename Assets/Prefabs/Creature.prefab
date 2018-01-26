@@ -233,8 +233,8 @@ MonoBehaviour:
   _food: 100
   _energy: 100
   _motivation: 50
-  EnergySpeed: 2
-  HungerSpeed: 3
-  GettingBoredSpeed: 2
+  EnergySpeed: 1
+  HungerSpeed: 1
+  GettingBoredSpeed: 1
   MovementSpeed: 0.1
   PoopPrefab: {fileID: 1922511668626204, guid: ba3dd821a0109ce40b22ea53972afd31, type: 2}
