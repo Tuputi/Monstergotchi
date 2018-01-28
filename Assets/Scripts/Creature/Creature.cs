@@ -115,17 +115,29 @@ public class Creature : MonoBehaviour {
 	public void Feed(int FoodEffect){
 		_food += FoodEffect;
 		Debug.Log ("Burp");
+		GameManager.instance.UpdateSliders ();
 	}
 
 	public void Sleep(){
 		_energyState = EnergyState.Asleep;
 		Debug.Log ("ZzzZZz");
+		GameManager.instance.UpdateSliders ();
 	}
 
 	public void Play(int playEffect){
 		_motivation += playEffect;
 		Debug.Log ("Having fun");
+		GameManager.instance.UpdateSliders ();
 	}
+
+
+
+	public void InitFromSave(CreatureSave save){
+		_food = save.food;
+		_energy = save.energy;
+		_motivation = save.motivation;
+	}
+
 
 
 	//MOVEMENT/LOCATION LOGIC
