@@ -138,6 +138,14 @@ public class Creature : MonoBehaviour {
 		_motivation = save.motivation;
 	}
 
+	public void ResetStats(){
+		_food = 100;
+		_energy = 100;
+		_motivation = 100;
+		UpdateNeeds ();
+		GameManager.instance.UpdateSliders ();
+	}
+
 
 
 	//MOVEMENT/LOCATION LOGIC
@@ -172,11 +180,11 @@ public class Creature : MonoBehaviour {
 		Quaternion _lookRotation;
 		Vector3 _direction;
 
-		Vector3 targetPos = actionPoint.gameObject.transform.position;
+		Vector3 targetPos = new Vector3(actionPoint.gameObject.transform.position.x, 0f, actionPoint.transform.position.z);
 		//gameObject.transform.LookAt (targetPos);
 
 		while (!TargetReached) {
-			_direction = (Target.position - transform.position).normalized;
+			_direction = (targetPos - transform.position).normalized;
 
 			//create the rotation we need to be in to look at the target
 			_lookRotation = Quaternion.LookRotation(_direction);
