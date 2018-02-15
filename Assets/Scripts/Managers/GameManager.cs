@@ -85,6 +85,10 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	public void ResetCreatureStats(){
+		myCreature.ResetStats ();
+	}
+
 
 	void OnApplicationPause(bool pauseStatus)
 	{
