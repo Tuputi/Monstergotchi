@@ -1,27 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class Draggable2D : MonoBehaviour {
+public class Draggable2D : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
 
-	bool Drag;
+	public static GameObject objectBeingDragged;
+	Vector3 startPosition;
 
-	void Update () {
-		if (Drag)
-		{
-			var screenPoint = Input.mousePosition;
-			screenPoint.z = 10.0f; 
-			transform.position = Camera.main.ScreenToWorldPoint(screenPoint);
-		}
-	}
-
-	void OnMouseDown()
+	#region IBeginDragHandler implementation
+	public void OnBeginDrag (PointerEventData eventData)
 	{
-		Drag = true;
+		objectBeingDragged = gameObject;
+		startPosition = transform.position;
+		objectBeingDragged.GetComponent<InteractionObject> ().SetActiveStatus (true);
+	}
+	#endregion
+
+	#region IDragHandler implementation
+
+	public void OnDrag (PointerEventData eventData)
+	{
+		transform.position = Input.mousePosition;
 	}
 
-	void OnMouseUp()
+	#endregion
+
+	#region IEndDragHandler implementation
+
+	public void OnEndDrag (PointerEventData eventData)
 	{
-		Drag = false;
+		objectBeingDragged.GetComponent<InteractionObject> ().SetActiveStatus (false);
+		objectBeingDragged = null;
+		transform.position = startPosition;
 	}
+
+	#endregion
 }
