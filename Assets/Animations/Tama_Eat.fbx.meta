@@ -1,0 +1,225 @@
+fileFormatVersion: 2
+guid: 4ea5dae7d7942e644bd96d7fa1c48a5e
+timeCreated: 1518730278
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: BS
+    100002: //RootNode
+    100004: Tama_Head_JawEndSHJnt
+    100006: Tama_Head_JawSHJnt
+    100008: Tama_Head_TopSHJnt
+    100010: Tama_l_Arm_ClavicleSHJnt
+    100012: Tama_l_Arm_ElbowSHJnt
+    100014: Tama_l_Arm_ShoulderSHJnt
+    100016: Tama_l_Arm_WristSHJnt
+    100018: Tama_l_Ears_01_01SHJnt
+    100020: Tama_l_Ears_01_02SHJnt
+    100022: Tama_l_Ears_02_01SHJnt
+    100024: Tama_l_Ears_02_02SHJnt
+    100026: Tama_l_Eye_01SHJnt
+    100028: Tama_l_Finger_01_01SHJnt
+    100030: Tama_l_Finger_01_02SHJnt
+    100032: Tama_l_Finger_02_01SHJnt
+    100034: Tama_l_Finger_02_02SHJnt
+    100036: Tama_l_Finger_03_01SHJnt
+    100038: Tama_l_Finger_03_02SHJnt
+    100040: Tama_l_Leg_AnkleSHJnt
+    100042: Tama_l_Leg_BallSHJnt
+    100044: Tama_l_Leg_HipSHJnt
+    100046: Tama_l_Leg_KneeSHJnt
+    100048: Tama_l_Leg_ToeSHJnt
+    100050: Tama_l_Lids_AuxSHJnt
+    100052: Tama_l_Thumb_01_01SHJnt
+    100054: Tama_l_Thumb_01_02SHJnt
+    100056: Tama_MAINSHJnt
+    100058: Tama_Neck_01SHJnt
+    100060: Tama_Neck_TopSHJnt
+    100062: Tama_r_Arm_ClavicleSHJnt
+    100064: Tama_r_Arm_ElbowSHJnt
+    100066: Tama_r_Arm_ShoulderSHJnt
+    100068: Tama_r_Arm_WristSHJnt
+    100070: Tama_r_Ears_01_01SHJnt
+    100072: Tama_r_Ears_01_02SHJnt
+    100074: Tama_r_Ears_02_01SHJnt
+    100076: Tama_r_Ears_02_02SHJnt
+    100078: Tama_r_Eye_01SHJnt
+    100080: Tama_r_Finger_01_01SHJnt
+    100082: Tama_r_Finger_01_02SHJnt
+    100084: Tama_r_Finger_02_01SHJnt
+    100086: Tama_r_Finger_02_02SHJnt
+    100088: Tama_r_Finger_03_01SHJnt
+    100090: Tama_r_Finger_03_02SHJnt
+    100092: Tama_r_Leg_AnkleSHJnt
+    100094: Tama_r_Leg_BallSHJnt
+    100096: Tama_r_Leg_HipSHJnt
+    100098: Tama_r_Leg_KneeSHJnt
+    100100: Tama_r_Leg_ToeSHJnt
+    100102: Tama_r_Lids_AuxSHJnt
+    100104: Tama_r_Thumb_01_01SHJnt
+    100106: Tama_r_Thumb_01_02SHJnt
+    100108: Tama_ROOTSHJnt
+    100110: Tama_SHJntGrp
+    100112: Tama_Spine_01SHJnt
+    100114: Tama_Spine_02SHJnt
+    100116: Tama_Spine_03SHJnt
+    100118: Tama_Spine_TopSHJnt
+    100120: Tama_Tail_AuxSHJnt
+    100122: Tama_Tongue_01_01SHJnt
+    100124: Tama_Tongue_01_02SHJnt
+    100126: TamaGeo
+    100128: Tamamonsteri_idle_loop_sit2:RRM_MAIN
+    400000: BS
+    400002: //RootNode
+    400004: Tama_Head_JawEndSHJnt
+    400006: Tama_Head_JawSHJnt
+    400008: Tama_Head_TopSHJnt
+    400010: Tama_l_Arm_ClavicleSHJnt
+    400012: Tama_l_Arm_ElbowSHJnt
+    400014: Tama_l_Arm_ShoulderSHJnt
+    400016: Tama_l_Arm_WristSHJnt
+    400018: Tama_l_Ears_01_01SHJnt
+    400020: Tama_l_Ears_01_02SHJnt
+    400022: Tama_l_Ears_02_01SHJnt
+    400024: Tama_l_Ears_02_02SHJnt
+    400026: Tama_l_Eye_01SHJnt
+    400028: Tama_l_Finger_01_01SHJnt
+    400030: Tama_l_Finger_01_02SHJnt
+    400032: Tama_l_Finger_02_01SHJnt
+    400034: Tama_l_Finger_02_02SHJnt
+    400036: Tama_l_Finger_03_01SHJnt
+    400038: Tama_l_Finger_03_02SHJnt
+    400040: Tama_l_Leg_AnkleSHJnt
+    400042: Tama_l_Leg_BallSHJnt
+    400044: Tama_l_Leg_HipSHJnt
+    400046: Tama_l_Leg_KneeSHJnt
+    400048: Tama_l_Leg_ToeSHJnt
+    400050: Tama_l_Lids_AuxSHJnt
+    400052: Tama_l_Thumb_01_01SHJnt
+    400054: Tama_l_Thumb_01_02SHJnt
+    400056: Tama_MAINSHJnt
+    400058: Tama_Neck_01SHJnt
+    400060: Tama_Neck_TopSHJnt
+    400062: Tama_r_Arm_ClavicleSHJnt
+    400064: Tama_r_Arm_ElbowSHJnt
+    400066: Tama_r_Arm_ShoulderSHJnt
+    400068: Tama_r_Arm_WristSHJnt
+    400070: Tama_r_Ears_01_01SHJnt
+    400072: Tama_r_Ears_01_02SHJnt
+    400074: Tama_r_Ears_02_01SHJnt
+    400076: Tama_r_Ears_02_02SHJnt
+    400078: Tama_r_Eye_01SHJnt
+    400080: Tama_r_Finger_01_01SHJnt
+    400082: Tama_r_Finger_01_02SHJnt
+    400084: Tama_r_Finger_02_01SHJnt
+    400086: Tama_r_Finger_02_02SHJnt
+    400088: Tama_r_Finger_03_01SHJnt
+    400090: Tama_r_Finger_03_02SHJnt
+    400092: Tama_r_Leg_AnkleSHJnt
+    400094: Tama_r_Leg_BallSHJnt
+    400096: Tama_r_Leg_HipSHJnt
+    400098: Tama_r_Leg_KneeSHJnt
+    400100: Tama_r_Leg_ToeSHJnt
+    400102: Tama_r_Lids_AuxSHJnt
+    400104: Tama_r_Thumb_01_01SHJnt
+    400106: Tama_r_Thumb_01_02SHJnt
+    400108: Tama_ROOTSHJnt
+    400110: Tama_SHJntGrp
+    400112: Tama_Spine_01SHJnt
+    400114: Tama_Spine_02SHJnt
+    400116: Tama_Spine_03SHJnt
+    400118: Tama_Spine_TopSHJnt
+    400120: Tama_Tail_AuxSHJnt
+    400122: Tama_Tongue_01_01SHJnt
+    400124: Tama_Tongue_01_02SHJnt
+    400126: TamaGeo
+    400128: Tamamonsteri_idle_loop_sit2:RRM_MAIN
+    2100000: Tama_LidsMat
+    2100002: Tama_BodyMat
+    2100004: Tama_LensMat
+    2100006: Tama_ShinyMat
+    4300000: TamaGeo
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: TamaGeo
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
