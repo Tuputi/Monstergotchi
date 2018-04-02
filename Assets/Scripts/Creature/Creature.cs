@@ -196,9 +196,10 @@ public class Creature : MonoBehaviour {
 			}
 			yield return 0;
 		}
-		//animator.SetBool ("Bounce", false);
 		DoLocationAction (actionPoint);
 		Debug.Log ("Target Reached");
+		transform.rotation = Quaternion.LookRotation(-1*Camera.main.transform.forward);
+
 	}
 		
 	private void DoLocationAction(ActionPoint actionPoint){
