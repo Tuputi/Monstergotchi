@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: c7051c185ba310a48be42f74fc0d58e5
-timeCreated: 1517127846
+guid: 9bcbeeb7e0122ea4bb2dd108ec4e68fe
+timeCreated: 1517094810
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Tama_Head_JawEndSHJnt
-    100004: Tama_Head_JawSHJnt
-    100006: Tama_Head_TopSHJnt
+    100000: Tama_Head_JawEndSHJnt
+    100002: Tama_Head_JawSHJnt
+    100004: Tama_Head_TopSHJnt
+    100006: //RootNode
     100008: Tama_l_Arm_ClavicleSHJnt
     100010: Tama_l_Arm_ElbowSHJnt
     100012: Tama_l_Arm_ShoulderSHJnt
@@ -59,18 +59,19 @@ ModelImporter:
     100102: Tama_r_Thumb_01_01SHJnt
     100104: Tama_r_Thumb_01_02SHJnt
     100106: Tama_ROOTSHJnt
-    100108: Tama_Spine_01SHJnt
-    100110: Tama_Spine_02SHJnt
-    100112: Tama_Spine_03SHJnt
-    100114: Tama_Spine_TopSHJnt
-    100116: Tama_Tail_AuxSHJnt
-    100118: Tama_Tongue_01_01SHJnt
-    100120: Tama_Tongue_01_02SHJnt
-    100122: Tama_SHJntGrp
-    400000: //RootNode
-    400002: Tama_Head_JawEndSHJnt
-    400004: Tama_Head_JawSHJnt
-    400006: Tama_Head_TopSHJnt
+    100108: Tama_SHJntGrp
+    100110: Tama_Spine_01SHJnt
+    100112: Tama_Spine_02SHJnt
+    100114: Tama_Spine_03SHJnt
+    100116: Tama_Spine_TopSHJnt
+    100118: Tama_Tail_AuxSHJnt
+    100120: Tama_Tongue_01_01SHJnt
+    100122: Tama_Tongue_01_02SHJnt
+    100124: TamaGeo
+    400000: Tama_Head_JawEndSHJnt
+    400002: Tama_Head_JawSHJnt
+    400004: Tama_Head_TopSHJnt
+    400006: //RootNode
     400008: Tama_l_Arm_ClavicleSHJnt
     400010: Tama_l_Arm_ElbowSHJnt
     400012: Tama_l_Arm_ShoulderSHJnt
@@ -121,17 +122,23 @@ ModelImporter:
     400102: Tama_r_Thumb_01_01SHJnt
     400104: Tama_r_Thumb_01_02SHJnt
     400106: Tama_ROOTSHJnt
-    400108: Tama_Spine_01SHJnt
-    400110: Tama_Spine_02SHJnt
-    400112: Tama_Spine_03SHJnt
-    400114: Tama_Spine_TopSHJnt
-    400116: Tama_Tail_AuxSHJnt
-    400118: Tama_Tongue_01_01SHJnt
-    400120: Tama_Tongue_01_02SHJnt
-    400122: Tama_SHJntGrp
+    400108: Tama_SHJntGrp
+    400110: Tama_Spine_01SHJnt
+    400112: Tama_Spine_02SHJnt
+    400114: Tama_Spine_03SHJnt
+    400116: Tama_Spine_TopSHJnt
+    400118: Tama_Tail_AuxSHJnt
+    400120: Tama_Tongue_01_01SHJnt
+    400122: Tama_Tongue_01_02SHJnt
+    400124: TamaGeo
+    2100000: Tama_LidsMat
+    2100002: Tama_BodyMat
+    2100004: Tama_LensMat
+    2100006: Tama_ShinyMat
+    4300000: TamaGeo
     7400000: Idle_Sit
     9500000: //RootNode
-    11100000: //RootNode
+    13700000: TamaGeo
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -143,14 +150,14 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: Tama_SHJntGrp/Tama_MAINSHJnt/Tama_ROOTSHJnt
+    motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
+    importAnimatedCustomProperties: 1
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -170,14 +177,14 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 1
+      keepOriginalOrientation: 0
       keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 1
+      keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
@@ -193,10 +200,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -211,10 +218,10 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 140
+    normalImportMode: 1
     tangentImportMode: 3
-    normalCalculationMode: 4
+    normalCalculationMode: 1
   importAnimation: 1
   copyAvatar: 1
   humanDescription:
