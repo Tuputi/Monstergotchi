@@ -30,6 +30,13 @@ public class Creature : MonoBehaviour {
 	private Animator animator;
 	public GameObject PoopPrefab;
 
+
+	void Awake(){
+		if (animator == null) {
+			animator = GetComponentInChildren<Animator> ();
+		}
+	}
+
 	/// <summary>
 	/// Goes through the different needs and increases/decreases them as appropriate
 	/// </summary>
@@ -116,6 +123,7 @@ public class Creature : MonoBehaviour {
 	public void Feed(int FoodEffect){
 		_food += FoodEffect;
 		Debug.Log ("Burp");
+		animator.Play ("Eat");
 		GameManager.instance.UpdateSliders ();
 	}
 
@@ -150,9 +158,6 @@ public class Creature : MonoBehaviour {
 	public void MoveToActionPoint(string myTargetType){
 		ActionPoint targetPoint = RoomManager.Instance.GetActionPoint (myTargetType);
 
-		if (animator == null) {
-			animator = GetComponentInChildren<Animator> ();
-		}
 		//animator.SetBool ("Bounce", true);
 
 		if (MovementIEnumerator != null) {
