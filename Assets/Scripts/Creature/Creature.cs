@@ -30,6 +30,8 @@ public class Creature : MonoBehaviour {
 	private Animator animator;
 	public GameObject PoopPrefab;
 
+	public GameObject activeFood;
+
 
 	void Awake(){
 		if (animator == null) {
@@ -49,9 +51,9 @@ public class Creature : MonoBehaviour {
 
 	private void HandleHunger(){
 		if (_food > 100) {
-			Debug.Log ("Poop");
-			GameObject poop = Instantiate (PoopPrefab);
-			poop.transform.position = this.transform.position;
+		//	Debug.Log ("Poop");
+		//	GameObject poop = Instantiate (PoopPrefab);
+		//	poop.transform.position = this.transform.position;
 			_food = 100;
 		}
 		_food -= HungerSpeed;
@@ -120,9 +122,9 @@ public class Creature : MonoBehaviour {
 	/// Adds the specified amount of food into the creature
 	/// </summary>
 	/// <param name="FoodEffect">Food effect.</param>
-	public void Feed(int FoodEffect){
+	public void Feed(int FoodEffect, GameObject food){
 		_food += FoodEffect;
-		Debug.Log ("Burp");
+		activeFood = food;
 		animator.Play ("Eat");
 		GameManager.instance.UpdateSliders ();
 	}
@@ -210,7 +212,7 @@ public class Creature : MonoBehaviour {
 	private void DoLocationAction(ActionPoint actionPoint){
 		switch (actionPoint.Type) {
 		case ActionPoint.ActionPointType.Food:
-			Feed (35);
+			Feed (35, null);
 			break;
 		case ActionPoint.ActionPointType.Sleep:
 			if (_energyState == EnergyState.Sleepy) {

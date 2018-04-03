@@ -8,29 +8,30 @@ public class InteractionObject : MonoBehaviour, IBeginDragHandler, IDragHandler,
 	public string name;
 	public bool active;
 	public int effectValue = 10;
-	public 
+	public bool used = false;
 
 	Ray ray;
 	RaycastHit hit;
 
 	//what happens when the creature is given this
 	public void Interact(){
-		Debug.Log ("Omnomnom");
-		GameManager.instance.MyCreature.Feed (effectValue);
+		GameManager.instance.MyCreature.Feed (effectValue, this.gameObject);
+		used = true;
 	}
 
 	void Update(){
 		if (active) {
 			ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-			if(Physics.Raycast(ray, out hit)){
+			if(Physics.Raycast(ray, out hit) && !used){
 				if(hit.collider.name.Equals("Creature(Clone)")){
-					SetActiveStatus (false);
 					Interact ();
-					SetActiveStatus (false);
-					transform.position = startPosition;
 				}
 			}
 		}
+	}
+
+	void OnDestroy(){
+		GetComponentInParent<IteractionObjectSource> ().CreateNewObject ();
 	}
 
 	public void SetActiveStatus(bool status){
@@ -40,6 +41,7 @@ public class InteractionObject : MonoBehaviour, IBeginDragHandler, IDragHandler,
 		} else {
 			GetComponent<UnityEngine.UI.Image> ().raycastTarget = true;
 			active = false;
+			used = false;
 		}
 	}
 
@@ -49,6 +51,9 @@ public class InteractionObject : MonoBehaviour, IBeginDragHandler, IDragHandler,
 	#region IBeginDragHandler implementation
 	public void OnBeginDrag (PointerEventData eventData)
 	{
+		if (used)
+			return;
+		
 		startPosition = transform.position;
 		SetActiveStatus (true);
 	}
@@ -58,7 +63,7 @@ public class InteractionObject : MonoBehaviour, IBeginDragHandler, IDragHandler,
 
 	public void OnDrag (PointerEventData eventData)
 	{
-		if (active) {
+		if (active && !used) {
 			transform.position = Input.mousePosition;
 		}
 	}
@@ -69,6 +74,9 @@ public class InteractionObject : MonoBehaviour, IBeginDragHandler, IDragHandler,
 
 	public void OnEndDrag (PointerEventData eventData)
 	{
+		if (used)
+			return;
+		
 		SetActiveStatus (false);
 		transform.position = startPosition;
 	}

@@ -245,6 +245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4692167038330932}
   - component: {fileID: 95829376746947886}
+  - component: {fileID: 114924397442790592}
   m_Layer: 0
   m_Name: Tama
   m_TagString: Untagged
@@ -590,10 +591,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4762950554092042}
-  - component: {fileID: 114640567840971270}
   - component: {fileID: 65212571967853880}
-  - component: {fileID: 114387246982708456}
-  - component: {fileID: 114313130895916364}
+  - component: {fileID: 114711623643891062}
   m_Layer: 0
   m_Name: Creature
   m_TagString: Untagged
@@ -1901,120 +1900,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114313130895916364
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1562810331500496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11ea9930ecb674732bee27116520fad8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debugMode: 0
-  OnStateChange:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: TouchScript.Gestures.Gesture+GestureEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-    m_CallsDirty: 1
-  <PreviousState>k__BackingField: 0
-  <touchManager>k__BackingField: {fileID: 0}
-  <pointersNumState>k__BackingField: 0
-  cachedTransform: {fileID: 0}
-  basicEditor: 1
-  generalProps: 0
-  limitsProps: 0
-  advancedProps: 0
-  minPointers: 0
-  maxPointers: 0
-  useSendMessage: 0
-  sendStateChangeMessages: 0
-  sendMessageTarget: {fileID: 0}
-  useUnityEvents: 0
-  sendStateChangeEvents: 0
-  requireGestureToFail: {fileID: 0}
-  friendlyGestures: []
-  numPointers: 0
-  gestureManagerInstance: {fileID: 0}
-  delayedStateChange: 0
-  requiredGestureFailed: 0
-  state: 0
-  cachedScreenPosition: {x: 0, y: 0}
-  cachedPreviousScreenPosition: {x: 0, y: 0}
-  OnTransformStart:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: TouchScript.Gestures.Gesture+GestureEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-    m_CallsDirty: 1
-  OnTransform:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: TouchScript.Gestures.Gesture+GestureEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-    m_CallsDirty: 1
-  OnTransformComplete:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: TouchScript.Gestures.Gesture+GestureEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-    m_CallsDirty: 1
-  screenTransformPixelThreshold: 0
-  screenTransformPixelThresholdSquared: 0
-  transformMask: 0
-  deltaPosition: {x: 0, y: 0, z: 0}
-  deltaRotation: 0
-  deltaScale: 0
-  rotationAxis: {x: 0, y: 0, z: 1}
-  isTransforming: 0
-  targetPositionOverridden: 0
-  targetPosition: {x: 0, y: 0, z: 0}
-  type: 1
-  screenTransformThreshold: 0.1
-  debugID: 0
-  debugPointerSize: {x: 0, y: 0}
-  minScreenPointsPixelDistance: 0
-  minScreenPointsPixelDistanceSquared: 0
-  screenPixelTranslationBuffer: {x: 0, y: 0}
-  screenPixelRotationBuffer: 0
-  angleBuffer: 0
-  screenPixelScalingBuffer: 0
-  scaleBuffer: 0
-  minScreenPointsDistance: 0.5
-  projectionProps: 0
-  projection: 2
-  projectionPlaneNormal: {x: 0, y: 0, z: 1}
-  projectionLayer: {fileID: 0}
---- !u!114 &114387246982708456
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1562810331500496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 978a486d8ecf8437cbb87e8534908895, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enableSmoothing: 0
-  smoothingFactor: 0.00001
-  positionThreshold: 0.01
-  rotationThreshold: 0.1
-  scaleThreshold: 0.01
-  allowChangingFromOutside: 0
-  state: 0
-  gesture: {fileID: 0}
-  cachedTransform: {fileID: 0}
-  transformMask: 0
-  targetPosition: {x: 0, y: 0, z: 0}
-  targetScale: {x: 0, y: 0, z: 0}
-  targetRotation: {x: 0, y: 0, z: 0, w: 0}
-  lastPosition: {x: 0, y: 0, z: 0}
-  lastScale: {x: 0, y: 0, z: 0}
-  lastRotation: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &114640567840971270
+--- !u!114 &114711623643891062
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2033,6 +1919,19 @@ MonoBehaviour:
   GettingBoredSpeed: 1
   MovementSpeed: 0.1
   PoopPrefab: {fileID: 1922511668626204, guid: ba3dd821a0109ce40b22ea53972afd31, type: 2}
+  activeFood: {fileID: 0}
+--- !u!114 &114924397442790592
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1269216664937400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21ffd810d9fe61c4db8badaa3d918c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creature: {fileID: 114711623643891062}
 --- !u!137 &137643011279907048
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
