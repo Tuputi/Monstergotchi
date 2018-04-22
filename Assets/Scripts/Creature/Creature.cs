@@ -12,6 +12,8 @@ public class Creature : MonoBehaviour {
 	public int _food = 100; // hunger meter
 	public int _energy = 100; // sleepyness
 	public int _motivation = 50; //0-100
+	public float cleanliness = 100; //0-100
+
 
 
 	private EnergyState _energyState = EnergyState.Awake;
@@ -24,6 +26,8 @@ public class Creature : MonoBehaviour {
 	private int HungerSpeed = 3; // how fast the creature loses food
 	[SerializeField]
 	private int GettingBoredSpeed = 2; //how fast the creature moves toward bored
+	[SerializeField]
+	private float GettingDirtySpeed = 0.5f;
 
 	public float MovementSpeed = 0.1f;
 
@@ -46,6 +50,7 @@ public class Creature : MonoBehaviour {
 		HandleHunger ();
 		HandleEnergy ();
 		HandleMotivation ();
+		HandleClean ();
 	}
 
 
@@ -115,6 +120,14 @@ public class Creature : MonoBehaviour {
 				_motivation = 0;
 			} 
 			break;
+		}
+	}
+
+	private void HandleClean(){
+		if (cleanliness < 0) {
+			cleanliness = 0;
+		} else {
+			cleanliness -= GettingDirtySpeed;
 		}
 	}
 

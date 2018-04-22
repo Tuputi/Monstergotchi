@@ -18,9 +18,11 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	public Slider FoodSlide;
-	public Slider EnergySlider;
-	public Slider MotivationSlider;
+	public Image FoodSlide;
+	public Image EnergySlider;
+	public Image MotivationSlider;
+	public Image CleanSlider;
+
 
 	void Start()
 	{
@@ -42,9 +44,10 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void UpdateSliders(){
-		FoodSlide.value = myCreature._food;
-		EnergySlider.value = myCreature._energy;
-		MotivationSlider.value = myCreature._motivation;
+		FoodSlide.fillAmount = myCreature._food/100f;
+		EnergySlider.fillAmount = myCreature._energy/100f;
+		MotivationSlider.fillAmount = myCreature._motivation/100f;
+		CleanSlider.fillAmount = myCreature.cleanliness / 100f;
 	}
 
 	private void UpdateCreatureNeedsForATimespan(int seconds){

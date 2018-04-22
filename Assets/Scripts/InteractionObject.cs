@@ -31,7 +31,9 @@ public class InteractionObject : MonoBehaviour, IBeginDragHandler, IDragHandler,
 	}
 
 	void OnDestroy(){
-		GetComponentInParent<IteractionObjectSource> ().CreateNewObject ();
+		var parent = GetComponentInParent<IteractionObjectSource> ();
+		if(parent != null)
+			parent.CreateNewObject ();
 	}
 
 	public void SetActiveStatus(bool status){
