@@ -137,8 +137,17 @@ public class Creature : MonoBehaviour {
 	/// <param name="FoodEffect">Food effect.</param>
 	public void Feed(int FoodEffect, GameObject food){
 		_food += FoodEffect;
+		cleanliness -= 5f;
 		activeFood = food;
 		animator.Play ("Eat");
+		GameManager.instance.UpdateSliders ();
+	}
+
+	public void Clean(int cleanEffect){
+		cleanliness += cleanEffect;
+		if (cleanliness > 100)
+			cleanliness = 100;
+		//animator.Play ("GettingCleaned");
 		GameManager.instance.UpdateSliders ();
 	}
 

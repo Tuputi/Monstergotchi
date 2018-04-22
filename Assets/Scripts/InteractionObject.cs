@@ -10,13 +10,16 @@ public class InteractionObject : MonoBehaviour, IBeginDragHandler, IDragHandler,
 	public int effectValue = 10;
 	public bool used = false;
 
-	Ray ray;
-	RaycastHit hit;
+	protected Ray ray;
+	protected RaycastHit hit;
 
 	//what happens when the creature is given this
-	public void Interact(){
+	public virtual void Interact(){
 		GameManager.instance.MyCreature.Feed (effectValue, this.gameObject);
 		used = true;
+	}
+
+	public virtual void EndInteraction(){
 	}
 
 	void Update(){
@@ -44,6 +47,8 @@ public class InteractionObject : MonoBehaviour, IBeginDragHandler, IDragHandler,
 			GetComponent<UnityEngine.UI.Image> ().raycastTarget = true;
 			active = false;
 			used = false;
+			EndInteraction ();
+
 		}
 	}
 
