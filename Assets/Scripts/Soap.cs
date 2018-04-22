@@ -42,7 +42,7 @@ public class Soap : InteractionObject {
 			//} else {
 			//	EndInteraction ();
 			//}
-			yield return 0;
+			yield return new WaitForSeconds(1);
 		}
 		yield return 0;
 	}

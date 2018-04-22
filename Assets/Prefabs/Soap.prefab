@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Soap
   active: 0
-  effectValue: 5
+  effectValue: 1
   used: 0
   EffectActive: 0
 --- !u!198 &198245729724040696

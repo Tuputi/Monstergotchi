@@ -66,6 +66,8 @@ public class GameManager : MonoBehaviour {
 		save.food = myCreature._food;
 		save.energy = myCreature._energy;
 		save.motivation = myCreature._motivation;
+		save.cleanliness = myCreature.cleanliness;
+
 		Debug.Log (JsonUtility.ToJson (save));
 		File.WriteAllText (Application.persistentDataPath + "/save.txt",JsonUtility.ToJson(save));
 	}

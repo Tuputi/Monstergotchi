@@ -9,9 +9,9 @@ public class Creature : MonoBehaviour {
 
 
 	//base needs
-	public int _food = 100; // hunger meter
-	public int _energy = 100; // sleepyness
-	public int _motivation = 50; //0-100
+	public float _food = 100; // hunger meter
+	public float _energy = 100; // sleepyness
+	public float _motivation = 50; //0-100
 	public float cleanliness = 100; //0-100
 
 
@@ -135,7 +135,7 @@ public class Creature : MonoBehaviour {
 	/// Adds the specified amount of food into the creature
 	/// </summary>
 	/// <param name="FoodEffect">Food effect.</param>
-	public void Feed(int FoodEffect, GameObject food){
+	public void Feed(float FoodEffect, GameObject food){
 		_food += FoodEffect;
 		cleanliness -= 5f;
 		activeFood = food;
@@ -143,7 +143,7 @@ public class Creature : MonoBehaviour {
 		GameManager.instance.UpdateSliders ();
 	}
 
-	public void Clean(int cleanEffect){
+	public void Clean(float cleanEffect){
 		cleanliness += cleanEffect;
 		if (cleanliness > 100)
 			cleanliness = 100;
@@ -169,6 +169,7 @@ public class Creature : MonoBehaviour {
 		_food = save.food;
 		_energy = save.energy;
 		_motivation = save.motivation;
+		cleanliness = save.cleanliness;
 	}
 
 	public void ResetStats(){

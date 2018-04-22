@@ -16,7 +16,8 @@ public class CreatureSave{
 	public long LastTimeStampUTC;
 	public string Name;
 
-	public int food; 
-	public int energy;
-	public int motivation;
+	public float food; 
+	public float energy;
+	public float motivation;
+	public float cleanliness;
 }

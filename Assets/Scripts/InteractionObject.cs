@@ -7,7 +7,7 @@ public class InteractionObject : MonoBehaviour, IBeginDragHandler, IDragHandler,
 
 	public string name;
 	public bool active;
-	public int effectValue = 10;
+	public float effectValue = 10;
 	public bool used = false;
 
 	protected Ray ray;
